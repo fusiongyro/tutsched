@@ -107,3 +107,20 @@ schedule_candidate(_, _, Student).
 %% certain times, we have not started assigning students to various
 %% times.
 */
+
+
+
+%% Constraints that could be described easily:
+%%
+%%   - Students are either new or seasoned; new max out at 10 hours a
+%%     week while seasoned may work up to 20.
+%%
+%%   - Students have a specialty, which is a department, including
+%%     gen. ed. and then all the academic departments we have (physics,
+%%     cs, math, biology, chemistry, etc. etc.)
+%%
+%%   - Students may work up to 3 hours a shift and up to 4 hours a day
+%%     in multiple shifts.
+%%
+%%   - Students have regular hours they can attend every week, which
+%%     are reduced by special unavailabilities.
