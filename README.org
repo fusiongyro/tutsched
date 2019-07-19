@@ -1,0 +1,39 @@
+#+TITLE: Tutor Scheduling
+#+AUTHOR: Daniel K Lyons
+#+DATE: 2019-07-19
+
+The idea behind this project is to make it fairly painless to create
+student schedules for a tutoring center.
+
+The tutoring center has a body of student employees, each with their
+own schedule of availability and topics they can tutor. The program
+should accept an input of data about the students, plus which days the
+center is open. It will then output at least one candidate schedule.
+
+Constraints to be described:
+
+ - Students are either new or seasoned; new max out at 10 hours a
+   week while seasoned may work up to 20.
+
+ - Students have one or more specialties, which is a department,
+   including gen. ed. and then all the academic departments we have
+   (physics, cs, math, biology, chemistry, etc. etc.)
+
+ - Students may work up to 3 hours in a row and up to 4 hours a day in
+   multiple shifts.
+
+ - Students have regular hours they can attend every week, which are
+   reduced by special unavailabilities.
+
+** Implementation notes
+
+It seems neat that with chr, I could set up candidate student/slot
+combinations and then remove them based on student unavailability.
+
+It seems unlikely that we will arrive at a "confluent" chr program,
+since it seems like it is unlikely that a set of input that can be
+satisfied can only be satisfied once (since you ought to be able to
+rearrange people fairly easily in a valid schedule). This suggests
+that it may be interesting to use CHR to remove impossible schedules
+and then retrieve the resulting constraints for a backtracking search
+in vanilla Prolog.
